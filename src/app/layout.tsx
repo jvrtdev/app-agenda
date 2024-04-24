@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full" >
-      <body className={inter.className + "bg-white"}>
+      <body className={inter.className + "bg-[#F1FFFD]"}>
         <main className="relative flex flex-col min-h-screen" >
           <AppContext>
             <Navbar />
@@ -28,7 +28,7 @@ export default function RootLayout({
           </AppContext>
         </main>
       </body>
-      <Toaster position="top-center" />
+      <Toaster />
     </html>
   );
 }
