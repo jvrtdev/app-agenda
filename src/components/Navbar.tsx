@@ -7,7 +7,7 @@ import { ModeToggle } from "./theme";
 function Navbar() {
   return (
       <div className="flex justify-center w-full">
-      <header className=" sticky z-50 top-0 inset-x-0 h-16 flex flex-col justify-around w-full max-w-screen-lg mt-1 bg-[#95a5a6] rounded-full dark:bg-gray-950 shadow-sm">
+      <header className="sticky z-50 top-0 inset-x-0 h-16 flex flex-col justify-around w-full max-w-screen-lg mt-1 bg-[#95a5a6] rounded-full dark:bg-gray-950 shadow-sm">
         <div className="flex items-center justify-between h-16 px-4 md:px-6">
           <Link className="flex items-center" href="/">
             <CalendarDays />
