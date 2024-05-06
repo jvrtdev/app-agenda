@@ -25,12 +25,17 @@ export default function SignIn(){
   } = useForm<Inputs>()
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data)
     try{
-      const response = await api.post('/api/user/login', data);
-      console.log(response.data)        
-      toast.success("Usuario logado com sucesso!")
-      return response.data
+      const response = await api.post('/api/user/login', data);        
+      if(response.data.error){
+        toast.error("Erro ao fazer login");
+      }
+      toast.success("Usuario logado com sucesso!");
+      console.log(response.data.token)
+      api.defaults.headers.common["Authorization"] = `Bearer ${response.data.token}`;
+      localStorage.setItem("token", JSON.stringify(response.data.token));
+      router.push('/agendify');
+
 
     }catch(error){
       toast.error("Erro ao logar usuario")
